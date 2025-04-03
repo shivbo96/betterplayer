@@ -1028,7 +1028,6 @@ class BetterPlayerController {
     }
   }
 
-
   // ignore: use_setters_to_change_properties
   ///Setup overridden aspect ratio.
   void setOverriddenAspectRatio(double aspectRatio) {
