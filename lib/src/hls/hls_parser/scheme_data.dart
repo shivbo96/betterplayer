@@ -36,7 +36,13 @@ class SchemeData {
       );
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
+    if (identical(this, other)) {
+      return true;
+    }
+    if (other.runtimeType != runtimeType) {
+      return false;
+    }
     if (other is SchemeData) {
       return other.mimeType == mimeType &&
           other.licenseServerUrl == licenseServerUrl &&
@@ -49,7 +55,7 @@ class SchemeData {
   }
 
   @override
-  int get hashCode => hashValues(
+  int get hashCode => Object.hash(
       /*uuid, */
       licenseServerUrl,
       mimeType,
